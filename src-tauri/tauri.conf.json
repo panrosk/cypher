@@ -1,7 +1,7 @@
 {
   "productName": "cypher",
   "version": "0.0.0",
-  "identifier": "com.tauri.dev",
+  "identifier": "com.cypher.dev",
   "build": {
     "beforeDevCommand": "bun run dev",
     "devUrl": "http://localhost:1420",
