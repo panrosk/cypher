@@ -1,13 +1,10 @@
 // Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
+mod commands;
 mod files;
 mod setup;
 mod store;
 mod window;
-
-#[tauri::command]
-fn greet(name: &str) -> String {
-    format!("Hello, {}! You've been greeted from Rust!", name)
-}
+use commands::storecommands::{get_dir_files, set_dir};
 
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
@@ -17,7 +14,7 @@ pub fn run() {
         .plugin(tauri_plugin_dialog::init())
         .plugin(tauri_plugin_shell::init())
         .setup(|app| setup::setup::setup(app))
-        .invoke_handler(tauri::generate_handler![greet])
+        .invoke_handler(tauri::generate_handler![set_dir, get_dir_files])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }

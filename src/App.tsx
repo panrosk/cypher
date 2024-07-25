@@ -1,30 +1,24 @@
 import { useEffect } from "react";
 import { Store } from "@tauri-apps/plugin-store";
-import "./App.css";
-import { InitScreen } from "./components";
+import "./css/main.css";
+import { InitScreen, MainView } from "./components";
 import { appDataDir } from "@tauri-apps/api/path";
-
+import { uiStore } from "./utils/stores/uistore";
 function App() {
   const store = new Store("store.bin");
-
+  const screen = uiStore();
   useEffect(() => {
     const fetchConfig = async () => {
       const config = await store.get("configStore");
-      console.log(config);
       const app_dir = await appDataDir();
-      console.log(app_dir);
-      store.set("app_dir", app_dir);
     };
-
+    console.log(screen);
     fetchConfig();
   }, []);
 
   return (
-    <div
-      style={{ fontFamily: "Open Sans, sans-serif" }}
-      className="text-white text-platform w-screen h-screen bg-[#1e1e1e]"
-    >
-      <InitScreen></InitScreen>
+    <div className="text-white text-platform w-screen h-screen bg-[#1e1e1e]">
+      {screen.screen === "init" ? <InitScreen /> : <MainView />}
     </div>
   );
 }

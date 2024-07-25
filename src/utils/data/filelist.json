@@ -1,0 +1,674 @@
+[
+  {
+    "type": "directory",
+    "path": "documents",
+    "sub": [
+      {
+        "type": "file",
+        "path": "resume.pdf"
+      },
+      {
+        "type": "file",
+        "path": "cover_letter.docx"
+      },
+      {
+        "type": "directory",
+        "path": "projects",
+        "sub": [
+          {
+            "type": "file",
+            "path": "project1.txt"
+          },
+          {
+            "type": "file",
+            "path": "project2.txt"
+          },
+          {
+            "type": "file",
+            "path": "project_notes.md"
+          },
+          {
+            "type": "directory",
+            "path": "completed",
+            "sub": [
+              {
+                "type": "file",
+                "path": "final_report.pdf"
+              },
+              {
+                "type": "file",
+                "path": "summary.docx"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "directory",
+        "path": "meeting_notes",
+        "sub": [
+          {
+            "type": "file",
+            "path": "meeting1.txt"
+          },
+          {
+            "type": "file",
+            "path": "meeting2.txt"
+          },
+          {
+            "type": "file",
+            "path": "meeting3.txt"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "directory",
+    "path": "photos",
+    "sub": [
+      {
+        "type": "file",
+        "path": "vacation.jpg"
+      },
+      {
+        "type": "file",
+        "path": "family.png"
+      },
+      {
+        "type": "directory",
+        "path": "events",
+        "sub": [
+          {
+            "type": "file",
+            "path": "birthday.jpg"
+          },
+          {
+            "type": "file",
+            "path": "wedding.png"
+          }
+        ]
+      },
+      {
+        "type": "directory",
+        "path": "2024",
+        "sub": [
+          {
+            "type": "file",
+            "path": "new_year.jpg"
+          },
+          {
+            "type": "file",
+            "path": "easter.png"
+          },
+          {
+            "type": "file",
+            "path": "summer_vacation.jpg"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "directory",
+    "path": "music",
+    "sub": [
+      {
+        "type": "file",
+        "path": "song1.mp3"
+      },
+      {
+        "type": "file",
+        "path": "song2.mp3"
+      },
+      {
+        "type": "file",
+        "path": "song3.wav"
+      },
+      {
+        "type": "directory",
+        "path": "albums",
+        "sub": [
+          {
+            "type": "file",
+            "path": "album1.zip"
+          },
+          {
+            "type": "file",
+            "path": "album2.zip"
+          },
+          {
+            "type": "directory",
+            "path": "live_recordings",
+            "sub": [
+              {
+                "type": "file",
+                "path": "live1.mp3"
+              },
+              {
+                "type": "file",
+                "path": "live2.mp3"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "file",
+    "path": "todo.txt"
+  },
+  {
+    "type": "directory",
+    "path": "videos",
+    "sub": [
+      {
+        "type": "file",
+        "path": "movie.mp4"
+      },
+      {
+        "type": "file",
+        "path": "clip.avi"
+      },
+      {
+        "type": "file",
+        "path": "tutorial.mkv"
+      },
+      {
+        "type": "directory",
+        "path": "recordings",
+        "sub": [
+          {
+            "type": "file",
+            "path": "session1.mp4"
+          },
+          {
+            "type": "file",
+            "path": "session2.mp4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "directory",
+    "path": "downloads",
+    "sub": [
+      {
+        "type": "file",
+        "path": "file1.zip"
+      },
+      {
+        "type": "file",
+        "path": "file2.rar"
+      },
+      {
+        "type": "file",
+        "path": "file3.tar.gz"
+      },
+      {
+        "type": "directory",
+        "path": "software",
+        "sub": [
+          {
+            "type": "file",
+            "path": "setup.exe"
+          },
+          {
+            "type": "file",
+            "path": "installer.dmg"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "directory",
+    "path": "documents",
+    "sub": [
+      {
+        "type": "file",
+        "path": "resume.pdf"
+      },
+      {
+        "type": "file",
+        "path": "cover_letter.docx"
+      },
+      {
+        "type": "directory",
+        "path": "projects",
+        "sub": [
+          {
+            "type": "file",
+            "path": "project1.txt"
+          },
+          {
+            "type": "file",
+            "path": "project2.txt"
+          },
+          {
+            "type": "file",
+            "path": "project_notes.md"
+          },
+          {
+            "type": "directory",
+            "path": "completed",
+            "sub": [
+              {
+                "type": "file",
+                "path": "final_report.pdf"
+              },
+              {
+                "type": "file",
+                "path": "summary.docx"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "directory",
+        "path": "meeting_notes",
+        "sub": [
+          {
+            "type": "file",
+            "path": "meeting1.txt"
+          },
+          {
+            "type": "file",
+            "path": "meeting2.txt"
+          },
+          {
+            "type": "file",
+            "path": "meeting3.txt"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "directory",
+    "path": "photos",
+    "sub": [
+      {
+        "type": "file",
+        "path": "vacation.jpg"
+      },
+      {
+        "type": "file",
+        "path": "family.png"
+      },
+      {
+        "type": "directory",
+        "path": "events",
+        "sub": [
+          {
+            "type": "file",
+            "path": "birthday.jpg"
+          },
+          {
+            "type": "file",
+            "path": "wedding.png"
+          }
+        ]
+      },
+      {
+        "type": "directory",
+        "path": "2024",
+        "sub": [
+          {
+            "type": "file",
+            "path": "new_year.jpg"
+          },
+          {
+            "type": "file",
+            "path": "easter.png"
+          },
+          {
+            "type": "file",
+            "path": "summer_vacation.jpg"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "directory",
+    "path": "music",
+    "sub": [
+      {
+        "type": "file",
+        "path": "song1.mp3"
+      },
+      {
+        "type": "file",
+        "path": "song2.mp3"
+      },
+      {
+        "type": "file",
+        "path": "song3.wav"
+      },
+      {
+        "type": "directory",
+        "path": "albums",
+        "sub": [
+          {
+            "type": "file",
+            "path": "album1.zip"
+          },
+          {
+            "type": "file",
+            "path": "album2.zip"
+          },
+          {
+            "type": "directory",
+            "path": "live_recordings",
+            "sub": [
+              {
+                "type": "file",
+                "path": "live1.mp3"
+              },
+              {
+                "type": "file",
+                "path": "live2.mp3"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "file",
+    "path": "todo.txt"
+  },
+  {
+    "type": "directory",
+    "path": "videos",
+    "sub": [
+      {
+        "type": "file",
+        "path": "movie.mp4"
+      },
+      {
+        "type": "file",
+        "path": "clip.avi"
+      },
+      {
+        "type": "file",
+        "path": "tutorial.mkv"
+      },
+      {
+        "type": "directory",
+        "path": "recordings",
+        "sub": [
+          {
+            "type": "file",
+            "path": "session1.mp4"
+          },
+          {
+            "type": "file",
+            "path": "session2.mp4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "directory",
+    "path": "downloads",
+    "sub": [
+      {
+        "type": "file",
+        "path": "file1.zip"
+      },
+      {
+        "type": "file",
+        "path": "file2.rar"
+      },
+      {
+        "type": "file",
+        "path": "file3.tar.gz"
+      },
+      {
+        "type": "directory",
+        "path": "software",
+        "sub": [
+          {
+            "type": "file",
+            "path": "setup.exe"
+          },
+          {
+            "type": "file",
+            "path": "installer.dmg"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "directory",
+    "path": "documents",
+    "sub": [
+      {
+        "type": "file",
+        "path": "resume.pdf"
+      },
+      {
+        "type": "file",
+        "path": "cover_letter.docx"
+      },
+      {
+        "type": "directory",
+        "path": "projects",
+        "sub": [
+          {
+            "type": "file",
+            "path": "project1.txt"
+          },
+          {
+            "type": "file",
+            "path": "project2.txt"
+          },
+          {
+            "type": "file",
+            "path": "project_notes.md"
+          },
+          {
+            "type": "directory",
+            "path": "completed",
+            "sub": [
+              {
+                "type": "file",
+                "path": "final_report.pdf"
+              },
+              {
+                "type": "file",
+                "path": "summary.docx"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "directory",
+        "path": "meeting_notes",
+        "sub": [
+          {
+            "type": "file",
+            "path": "meeting1.txt"
+          },
+          {
+            "type": "file",
+            "path": "meeting2.txt"
+          },
+          {
+            "type": "file",
+            "path": "meeting3.txt"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "directory",
+    "path": "photos",
+    "sub": [
+      {
+        "type": "file",
+        "path": "vacation.jpg"
+      },
+      {
+        "type": "file",
+        "path": "family.png"
+      },
+      {
+        "type": "directory",
+        "path": "events",
+        "sub": [
+          {
+            "type": "file",
+            "path": "birthday.jpg"
+          },
+          {
+            "type": "file",
+            "path": "wedding.png"
+          }
+        ]
+      },
+      {
+        "type": "directory",
+        "path": "2024",
+        "sub": [
+          {
+            "type": "file",
+            "path": "new_year.jpg"
+          },
+          {
+            "type": "file",
+            "path": "easter.png"
+          },
+          {
+            "type": "file",
+            "path": "summer_vacation.jpg"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "directory",
+    "path": "music",
+    "sub": [
+      {
+        "type": "file",
+        "path": "song1.mp3"
+      },
+      {
+        "type": "file",
+        "path": "song2.mp3"
+      },
+      {
+        "type": "file",
+        "path": "song3.wav"
+      },
+      {
+        "type": "directory",
+        "path": "albums",
+        "sub": [
+          {
+            "type": "file",
+            "path": "album1.zip"
+          },
+          {
+            "type": "file",
+            "path": "album2.zip"
+          },
+          {
+            "type": "directory",
+            "path": "live_recordings",
+            "sub": [
+              {
+                "type": "file",
+                "path": "live1.mp3"
+              },
+              {
+                "type": "file",
+                "path": "live2.mp3"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "file",
+    "path": "todo.txt"
+  },
+  {
+    "type": "directory",
+    "path": "videos",
+    "sub": [
+      {
+        "type": "file",
+        "path": "movie.mp4"
+      },
+      {
+        "type": "file",
+        "path": "clip.avi"
+      },
+      {
+        "type": "file",
+        "path": "tutorial.mkv"
+      },
+      {
+        "type": "directory",
+        "path": "recordings",
+        "sub": [
+          {
+            "type": "file",
+            "path": "session1.mp4"
+          },
+          {
+            "type": "file",
+            "path": "session2.mp4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "directory",
+    "path": "downloads",
+    "sub": [
+      {
+        "type": "file",
+        "path": "file1.zip"
+      },
+      {
+        "type": "file",
+        "path": "file2.rar"
+      },
+      {
+        "type": "file",
+        "path": "file3.tar.gz"
+      },
+      {
+        "type": "directory",
+        "path": "software",
+        "sub": [
+          {
+            "type": "file",
+            "path": "setup.exe"
+          },
+          {
+            "type": "file",
+            "path": "installer.dmg"
+          }
+        ]
+      }
+    ]
+  }
+]

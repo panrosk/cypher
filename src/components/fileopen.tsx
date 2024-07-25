@@ -1,16 +1,23 @@
+import { invoke } from "@tauri-apps/api/core";
 import { open } from "@tauri-apps/plugin-dialog";
-import React from "react";
+import { uiStore } from "../utils/stores/uistore";
 
 interface fileOpenOptions {
   content: string;
 }
 
 const FileOpen = (props: fileOpenOptions) => {
+  const screen = uiStore();
   async function getFile() {
     const file = await open({
       title: "Select your Crypt",
       directory: true,
     });
+
+    if (file !== null) {
+      invoke("set_dir", { dir: file });
+      screen.change_to_main();
+    }
   }
 
   return (
