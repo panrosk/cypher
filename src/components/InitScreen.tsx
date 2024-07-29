@@ -1,13 +1,21 @@
 import React from "react";
 import logo from "../assets/Cypherblack.svg";
 import InitScreenItemList from "./InitScreenItemList";
-import { FileButton } from ".";
+import { OpenOrCreateVault } from ".";
 
 const InitScreen = () => {
   const exampleOptions = [
     {
       header: "Open folder as crypt",
       subheader: "Choose an existing folder as your crypt.",
+      content: "Open",
+      type: "open",
+    },
+    {
+      header: "Create a new crypt",
+      subheader: "Create a new dir as a crypt for your notes.",
+      content: "Create",
+      type: "create",
     },
   ];
   return (
@@ -28,14 +36,14 @@ const InitScreen = () => {
         </div>
       </div>
       <div className="w-2/3 grid place-content-center">
-        <div className="flex flex-col w-full">
+        <div className="flex gap-y-20 flex-col w-full">
           {exampleOptions.map((item, _key) => {
             return (
               <InitScreenItemList
                 header={item.header}
                 subheader={item.subheader}
               >
-                <FileButton content="Open" />
+                <OpenOrCreateVault content={item.content} type={item.type} />
               </InitScreenItemList>
             );
           })}

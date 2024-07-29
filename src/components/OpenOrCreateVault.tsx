@@ -4,11 +4,12 @@ import { uiStore } from "../utils/stores/uistore";
 
 interface fileOpenOptions {
   content: string;
+  type: "open" | "create";
 }
 
 const FileOpen = (props: fileOpenOptions) => {
   const screen = uiStore();
-  async function getFile() {
+  async function onClickAction() {
     const file = await open({
       title: "Select your Crypt",
       directory: true,
@@ -24,7 +25,7 @@ const FileOpen = (props: fileOpenOptions) => {
     <>
       <button
         className="bg-white rounded-full px-10 text-center py-2 text-black"
-        onClick={getFile}
+        onClick={onClickAction}
       >
         {props.content}
       </button>

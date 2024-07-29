@@ -1,0 +1,3 @@
+- [ ] Init create config.json
+- [ ] Mardown viewer
+- [ ] Crear evento de creacion de archivos

@@ -1,11 +1,22 @@
+import React, { useEffect, useState } from "react";
 import { FileItem } from "./FileItem";
-const Sidebar = (props) => {
+
+interface File {
+  type: "File" | "Directory";
+  relative_path: string;
+  path: string;
+  sub?: File[];
+}
+
+const Sidebar = ({ files }: { files?: File[] | null }) => {
   return (
-    <div className="h-screen w-full overflow-hidden  p-[40px]">
+    <div className="h-screen w-full overflow-hidden p-[40px]">
       <div className="overflow-y-scroll h-full">
-        {props.filelist.map((item: any, indx: any) => {
-          return <FileItem key={indx} file={item} />;
-        })}
+        {files &&
+          Array.isArray(files) &&
+          files.map((item, indx) => {
+            return <FileItem key={indx} file={item} />;
+          })}
       </div>
     </div>
   );

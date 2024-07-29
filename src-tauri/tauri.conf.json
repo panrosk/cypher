@@ -1,7 +1,7 @@
 {
   "productName": "cypher",
   "version": "0.0.0",
-  "identifier": "com.cypher.dev",
+  "identifier": "com.cypherpty.dev",
   "build": {
     "beforeDevCommand": "bun run dev",
     "devUrl": "http://localhost:1420",

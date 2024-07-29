@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -22,24 +22,37 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		07374EB4B60713AEA0A41309 /* setup.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = setup.rs; sourceTree = "<group>"; };
 		0A305483711088251DE9D513 /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = assets; sourceTree = SOURCE_ROOT; };
 		0BB91AD1B9CF71F77D5C5699 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		124EC899AE3A8126C3C7C5E9 /* lib.rs */ = {isa = PBXFileReference; path = lib.rs; sourceTree = "<group>"; };
+		11807CF518BB694DA53AF8A1 /* mod.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = mod.rs; sourceTree = "<group>"; };
+		124EC899AE3A8126C3C7C5E9 /* lib.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = lib.rs; sourceTree = "<group>"; };
 		141B1F046E31985141A19F82 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1E081A5A89454D688878C04C /* mod.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = mod.rs; sourceTree = "<group>"; };
+		25DA51082B5387ACBF1901DA /* stores.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = stores.rs; sourceTree = "<group>"; };
 		2CA6D7D5270A8A3EF81B3791 /* bindings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bindings.h; sourceTree = "<group>"; };
-		2F195A4301CFB49F4CC52FD5 /* main.rs */ = {isa = PBXFileReference; path = main.rs; sourceTree = "<group>"; };
+		2EB7C3954F6891C8AC70CF18 /* file_handling.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = file_handling.rs; sourceTree = "<group>"; };
+		2F195A4301CFB49F4CC52FD5 /* main.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = main.rs; sourceTree = "<group>"; };
+		3CB6CF672AC1E86FD2D01C18 /* configstore.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = configstore.rs; sourceTree = "<group>"; };
 		45C0624E876173EE7554819C /* cypher_iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = cypher_iOS.entitlements; sourceTree = "<group>"; };
 		47F63BC94A7005C81AC487AA /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = System/Library/Frameworks/MetalKit.framework; sourceTree = SDKROOT; };
 		51AD2D93F298800B5BD20D6B /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
 		5218D41FC04F003285511DC0 /* libcypher_lib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcypher_lib.a; sourceTree = "<group>"; };
+		5D43D8D7ABD5CBE21E7B51B7 /* file_types.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = file_types.rs; sourceTree = "<group>"; };
 		5F0FAFF19D419F6324A55FE4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		64AE7AA1392E311B8BE48457 /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
 		8E66D658CA4A6A6B6E775E73 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		90BC36F1FC1E887CBBCC0177 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		98E2404BCB1633A07C9B8ADC /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		99B3273AE29E681D70CC1AFF /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		B82E4525BB8D56C4CA9E5303 /* cypher_iOS.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = cypher_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B82E4525BB8D56C4CA9E5303 /* cypher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cypher.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C75662B52701B369560FD07E /* file_utils.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = file_utils.rs; sourceTree = "<group>"; };
+		CA391B3EA847C46066DFD2DA /* windowsetup.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = windowsetup.rs; sourceTree = "<group>"; };
+		CCD4ED40D286046B3D01BC65 /* storecommands.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = storecommands.rs; sourceTree = "<group>"; };
+		E3A6318A6173D96E1CE54B6C /* mod.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = mod.rs; sourceTree = "<group>"; };
+		EC107F52C0809936C82BF4FF /* mod.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = mod.rs; sourceTree = "<group>"; };
 		F1749B663E11F54844245601 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		F262FD03482F8B5317AA8875 /* mod.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = mod.rs; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +74,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		113DC9BF89C9D501E8595598 /* window */ = {
+			isa = PBXGroup;
+			children = (
+				EC107F52C0809936C82BF4FF /* mod.rs */,
+				CA391B3EA847C46066DFD2DA /* windowsetup.rs */,
+			);
+			path = window;
+			sourceTree = "<group>";
+		};
+		11CE871F54E9BDE147754F75 /* commands */ = {
+			isa = PBXGroup;
+			children = (
+				E3A6318A6173D96E1CE54B6C /* mod.rs */,
+				CCD4ED40D286046B3D01BC65 /* storecommands.rs */,
+			);
+			path = commands;
+			sourceTree = "<group>";
+		};
+		397D799973AC5C13455230A4 /* setup */ = {
+			isa = PBXGroup;
+			children = (
+				F262FD03482F8B5317AA8875 /* mod.rs */,
+				07374EB4B60713AEA0A41309 /* setup.rs */,
+			);
+			path = setup;
+			sourceTree = "<group>";
+		};
 		6649B9DAB77D6E95FE39CA07 /* Externals */ = {
 			isa = PBXGroup;
 			children = (
@@ -73,15 +113,41 @@
 			children = (
 				124EC899AE3A8126C3C7C5E9 /* lib.rs */,
 				2F195A4301CFB49F4CC52FD5 /* main.rs */,
+				11CE871F54E9BDE147754F75 /* commands */,
+				8889F974FCA914FB69611CB3 /* files */,
+				397D799973AC5C13455230A4 /* setup */,
+				8CDF697AEE765F135508D541 /* store */,
+				113DC9BF89C9D501E8595598 /* window */,
 			);
 			name = src;
 			path = ../../src;
 			sourceTree = "<group>";
 		};
+		8889F974FCA914FB69611CB3 /* files */ = {
+			isa = PBXGroup;
+			children = (
+				2EB7C3954F6891C8AC70CF18 /* file_handling.rs */,
+				5D43D8D7ABD5CBE21E7B51B7 /* file_types.rs */,
+				C75662B52701B369560FD07E /* file_utils.rs */,
+				1E081A5A89454D688878C04C /* mod.rs */,
+			);
+			path = files;
+			sourceTree = "<group>";
+		};
+		8CDF697AEE765F135508D541 /* store */ = {
+			isa = PBXGroup;
+			children = (
+				3CB6CF672AC1E86FD2D01C18 /* configstore.rs */,
+				11807CF518BB694DA53AF8A1 /* mod.rs */,
+				25DA51082B5387ACBF1901DA /* stores.rs */,
+			);
+			path = store;
+			sourceTree = "<group>";
+		};
 		9BB2883576F486DBBCAD22CC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B82E4525BB8D56C4CA9E5303 /* cypher_iOS.app */,
+				B82E4525BB8D56C4CA9E5303 /* cypher.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -168,7 +234,7 @@
 			);
 			name = cypher_iOS;
 			productName = cypher_iOS;
-			productReference = B82E4525BB8D56C4CA9E5303 /* cypher_iOS.app */;
+			productReference = B82E4525BB8D56C4CA9E5303 /* cypher.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -397,10 +463,28 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				"LIBRARY_SEARCH_PATHS[arch=arm64-sim]" = "$(inherited) $(PROJECT_DIR)/Externals/arm64-sim/$(CONFIGURATION) $(SDKROOT)/usr/lib/swift $(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME) $(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)";
-				"LIBRARY_SEARCH_PATHS[arch=arm64]" = "$(inherited) $(PROJECT_DIR)/Externals/arm64/$(CONFIGURATION) $(SDKROOT)/usr/lib/swift $(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME) $(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)";
-				"LIBRARY_SEARCH_PATHS[arch=x86_64]" = "$(inherited) $(PROJECT_DIR)/Externals/x86_64/$(CONFIGURATION) $(SDKROOT)/usr/lib/swift $(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME) $(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tauri.dev;
+				"LIBRARY_SEARCH_PATHS[arch=arm64-sim]" = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Externals/arm64-sim/$(CONFIGURATION)",
+					"$(SDKROOT)/usr/lib/swift",
+					"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)",
+					"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)",
+				);
+				"LIBRARY_SEARCH_PATHS[arch=arm64]" = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Externals/arm64/$(CONFIGURATION)",
+					"$(SDKROOT)/usr/lib/swift",
+					"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)",
+					"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)",
+				);
+				"LIBRARY_SEARCH_PATHS[arch=x86_64]" = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Externals/x86_64/$(CONFIGURATION)",
+					"$(SDKROOT)/usr/lib/swift",
+					"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)",
+					"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.cypherpty.dev;
 				PRODUCT_NAME = cypher;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -433,10 +517,28 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				"LIBRARY_SEARCH_PATHS[arch=arm64-sim]" = "$(inherited) $(PROJECT_DIR)/Externals/arm64-sim/$(CONFIGURATION) $(SDKROOT)/usr/lib/swift $(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME) $(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)";
-				"LIBRARY_SEARCH_PATHS[arch=arm64]" = "$(inherited) $(PROJECT_DIR)/Externals/arm64/$(CONFIGURATION) $(SDKROOT)/usr/lib/swift $(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME) $(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)";
-				"LIBRARY_SEARCH_PATHS[arch=x86_64]" = "$(inherited) $(PROJECT_DIR)/Externals/x86_64/$(CONFIGURATION) $(SDKROOT)/usr/lib/swift $(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME) $(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tauri.dev;
+				"LIBRARY_SEARCH_PATHS[arch=arm64-sim]" = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Externals/arm64-sim/$(CONFIGURATION)",
+					"$(SDKROOT)/usr/lib/swift",
+					"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)",
+					"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)",
+				);
+				"LIBRARY_SEARCH_PATHS[arch=arm64]" = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Externals/arm64/$(CONFIGURATION)",
+					"$(SDKROOT)/usr/lib/swift",
+					"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)",
+					"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)",
+				);
+				"LIBRARY_SEARCH_PATHS[arch=x86_64]" = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Externals/x86_64/$(CONFIGURATION)",
+					"$(SDKROOT)/usr/lib/swift",
+					"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)",
+					"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.cypherpty.dev;
 				PRODUCT_NAME = cypher;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";

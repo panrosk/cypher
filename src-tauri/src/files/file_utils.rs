@@ -10,36 +10,38 @@ pub fn list_files_on_directory(
     dir: &Path,
     result: &mut Vec<Option<File>>,
     parent: &Path,
-) -> Result<()> {
+) -> Result<Vec<Option<File>>> {
     if dir.is_file() {
         let relative_path =
-            diff_paths(dir, parent).unwrap_or_else(|| PathBuf::from(dir.to_str().unwrap()));
+            diff_paths(dir, parent).unwrap_or_else(|| PathBuf::from(dir.to_str().unwrap_or("")));
+
         let file = File::new(
             FileType::File,
-            dir.to_str().unwrap(),
-            relative_path.to_str().unwrap(),
+            dir.to_str().unwrap_or(""),
+            relative_path.to_str().unwrap_or(""),
             None,
         );
+
         result.push(Some(file));
+        return Ok(result.to_vec());
     } else if dir.is_dir() {
+        let mut sub: Vec<Option<File>> = Vec::new();
         for entry in fs::read_dir(dir)? {
             let entry = entry?;
             let path = entry.path();
 
-            let relative_path =
-                diff_paths(&path, parent).unwrap_or_else(|| PathBuf::from(path.to_str().unwrap()));
-
-            let mut sub: Vec<Option<File>> = Vec::new();
-            list_files_on_directory(&path, &mut sub, &path)?;
-            let sub_dir = File::new(
-                FileType::Directory,
-                path.to_str().unwrap(),
-                relative_path.to_str().unwrap(),
-                Some(sub),
-            );
-            result.push(Some(sub_dir))
+            list_files_on_directory(&path, &mut sub, parent)?;
         }
+        let relative_path =
+            diff_paths(dir, parent).unwrap_or_else(|| PathBuf::from(dir.to_str().unwrap_or("")));
+        let sub_dir = File::new(
+            FileType::Directory,
+            dir.to_str().unwrap_or(""),
+            relative_path.to_str().unwrap_or(""),
+            Some(sub),
+        );
+        result.push(Some(sub_dir));
     }
 
-    Ok(())
+    Ok(result.to_vec())
 }

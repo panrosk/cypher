@@ -12,7 +12,6 @@ function App() {
       const config = await store.get("configStore");
       const app_dir = await appDataDir();
     };
-    console.log(screen);
     fetchConfig();
   }, []);
 
