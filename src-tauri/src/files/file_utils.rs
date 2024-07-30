@@ -26,14 +26,16 @@ pub fn list_files_on_directory(
         return Ok(result.to_vec());
     } else if dir.is_dir() {
         let mut sub: Vec<Option<File>> = Vec::new();
+
+        let relative_path =
+            diff_paths(dir, parent).unwrap_or_else(|| PathBuf::from(dir.to_str().unwrap_or("")));
+
         for entry in fs::read_dir(dir)? {
             let entry = entry?;
             let path = entry.path();
 
-            list_files_on_directory(&path, &mut sub, parent)?;
+            list_files_on_directory(&path, &mut sub, &PathBuf::from(dir.to_str().unwrap_or("")))?;
         }
-        let relative_path =
-            diff_paths(dir, parent).unwrap_or_else(|| PathBuf::from(dir.to_str().unwrap_or("")));
         let sub_dir = File::new(
             FileType::Directory,
             dir.to_str().unwrap_or(""),

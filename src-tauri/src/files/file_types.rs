@@ -1,8 +1,8 @@
 use core::panic;
-use std::{fs, str::FromStr};
-
 use serde::{Deserialize, Serialize};
 use serde_json::Value;
+use std::path::Path;
+use std::{fs, str::FromStr};
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum FileExtension {
@@ -11,6 +11,7 @@ pub enum FileExtension {
     Jpg,
     Png,
     Markdown,
+    Directory,
     Unknown,
 }
 
@@ -22,6 +23,7 @@ impl FileExtension {
             "jpg" => FileExtension::Jpg,
             "png" => FileExtension::Png,
             "md" => FileExtension::Markdown,
+
             _ => FileExtension::Unknown,
         }
     }
@@ -49,11 +51,17 @@ impl File {
         relative_path_to_file: &str,
         sub: Option<Vec<Option<File>>>,
     ) -> Self {
-        let extension = std::path::Path::new(path_to_file)
+        let extension = Path::new(path_to_file)
             .extension()
             .and_then(std::ffi::OsStr::to_str)
             .map(FileExtension::from_extension)
-            .unwrap_or(FileExtension::Unknown);
+            .unwrap_or_else(|| {
+                if Path::new(path_to_file).is_dir() {
+                    FileExtension::Directory
+                } else {
+                    FileExtension::Unknown
+                }
+            });
 
         File {
             file_type,

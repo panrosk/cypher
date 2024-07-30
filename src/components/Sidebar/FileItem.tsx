@@ -1,16 +1,18 @@
 import { invoke } from "@tauri-apps/api/core";
-import { emit } from "@tauri-apps/api/event";
 import { useState } from "react";
 import { markdownStore } from "../../utils/stores/markdownstore";
+import FileIcon from "./FileIcon";
 
 interface File {
   file_type: "File" | "Directory";
   relative_path: string;
   path: string;
   sub?: File[];
+  extension: string;
 }
 
 export const FileItem = ({ file }: { file: File }) => {
+  console.log(file);
   const [isExpanded, setExpanded] = useState(false);
   const markdown = markdownStore();
   const on_file_click = async (file: File) => {
@@ -24,19 +26,30 @@ export const FileItem = ({ file }: { file: File }) => {
   };
 
   return (
-    <div>
+    <div className="no-scrollbar w-full">
       {file.file_type === "File" ? (
-        <button onClick={() => on_file_click(file)}>
-          {"Oscar" + file.relative_path}
-        </button>
+        <p className="flex gap-x-2 py-1" onClick={() => on_file_click(file)}>
+          <FileIcon icon={file.extension} />
+          {file.relative_path}
+        </p>
       ) : (
         <>
-          <p onClick={handleToggle} style={{ cursor: "pointer" }}>
-            {file.sub && file.sub.length > 0 && (isExpanded ? "● " : "○ ")}{" "}
+          <p
+            className="text-small flex gap-x-2"
+            onClick={handleToggle}
+            style={{ cursor: "pointer" }}
+          >
+            {file.sub &&
+              file.sub.length > 0 &&
+              (isExpanded ? (
+                <FileIcon icon="Directory" dir={true} />
+              ) : (
+                <FileIcon icon="Directory" dir={false} />
+              ))}{" "}
             {file.relative_path}
           </p>
           {isExpanded && file.sub && file.sub.length > 0 && (
-            <div className="gap-y-4" style={{ paddingLeft: 20 }}>
+            <div className="gap-y-4 text-small" style={{ paddingLeft: 20 }}>
               {file.sub.map((subFile, index) => (
                 <FileItem key={index} file={subFile} />
               ))}

@@ -6,12 +6,16 @@ interface File {
   relative_path: string;
   path: string;
   sub?: File[];
+  extension: string;
 }
 
 const Sidebar = ({ files }: { files?: File[] | null }) => {
   return (
-    <div className="h-screen w-full overflow-hidden p-[40px]">
-      <div className="overflow-y-scroll h-full">
+    <div className="h-screen no-scrollbar w-full overflow-hidden p-[40px]">
+      <div
+        style={{ msScrollbarBaseColor: "black" }}
+        className="overflow-y-scroll mt-20 no-scrollbar h-full w-full gap-y-4"
+      >
         {files &&
           Array.isArray(files) &&
           files.map((item, indx) => {

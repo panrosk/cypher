@@ -22,6 +22,10 @@ const MarkdownView = ({ file }: { file?: MarkDownFile | null }) => {
         preview="edit"
         style={{
           backgroundColor: "#1e1e1e",
+          border: "0px",
+          WebkitBoxShadow: "none",
+          boxShadow: "0px !important",
+          fontSize: "22px !important",
         }}
         height={"100%"}
         value={markdown.content}

@@ -15,7 +15,7 @@ const Mainview = () => {
     const fetchData = async () => {
       const store = new Store("store.bin");
       const files = await store.get("config_store");
-      setFiles(files.current_files_on_directory as File[]);
+      setFiles(files.current_files_on_directory[0].sub as File[]);
       console.log(files.current_files_on_directory as File[]);
     };
 
@@ -24,10 +24,10 @@ const Mainview = () => {
 
   return (
     <div className="w-screen flex overflow-hidden text-white h-screen">
-      <div className="h-full w-1/4">
+      <div className="h-full w-1/3">
         <Sidebar files={files}></Sidebar>
       </div>
-      <div className="h-full w-3/4">
+      <div className="h-full w-2/3">
         <Viewer />
       </div>
     </div>

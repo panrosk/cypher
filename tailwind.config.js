@@ -6,6 +6,9 @@ export default {
       fontFamily: {
         platform: ["Open Sans", "sans-serif"],
       },
+      fontSize: {
+        small: "16px",
+      },
       padding: {
         bigscreen: "40px",
       },
