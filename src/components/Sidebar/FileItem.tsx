@@ -1,6 +1,6 @@
 import { invoke } from "@tauri-apps/api/core";
 import { useState } from "react";
-import { markdownStore } from "../../utils/stores/markdownstore";
+import { app_store } from "../../utils/stores/Appstore";
 import FileIcon from "./FileIcon";
 
 interface File {
@@ -12,13 +12,11 @@ interface File {
 }
 
 export const FileItem = ({ file }: { file: File }) => {
-  console.log(file);
   const [isExpanded, setExpanded] = useState(false);
-  const markdown = markdownStore();
+  const appStore = app_store();
   const on_file_click = async (file: File) => {
     const file_to_read = await invoke("read_file", { file: file });
-    console.log(file_to_read.content);
-    markdown.change_content(file_to_read.content);
+    appStore.change_content(file_to_read);
   };
 
   const handleToggle = () => {

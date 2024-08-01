@@ -1,8 +1,7 @@
 use core::panic;
 use serde::{Deserialize, Serialize};
-use serde_json::Value;
+use std::fs;
 use std::path::Path;
-use std::{fs, str::FromStr};
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum FileExtension {
@@ -10,7 +9,7 @@ pub enum FileExtension {
     Json,
     Jpg,
     Png,
-    Markdown,
+    Markdown { title: String, content: String },
     Directory,
     Unknown,
 }
@@ -22,7 +21,10 @@ impl FileExtension {
             "json" => FileExtension::Json,
             "jpg" => FileExtension::Jpg,
             "png" => FileExtension::Png,
-            "md" => FileExtension::Markdown,
+            "md" => FileExtension::Markdown {
+                title: String::new(),
+                content: String::new(),
+            },
 
             _ => FileExtension::Unknown,
         }
@@ -71,18 +73,46 @@ impl File {
             extension,
         }
     }
-    pub fn read_files(&self) -> Value {
-        let file = match self.extension {
-            FileExtension::Markdown => self.read_markdown(),
-            _ => panic!("Que estas leyendo mamador"),
+    pub fn read_files(&mut self) {
+        match &self.extension {
+            FileExtension::Markdown { .. } => self.read_markdown(),
+            _ => panic!("Que estas leyendo"),
         };
-        serde_json::json!({
-            "content":file.as_str()
-        })
     }
 
-    fn read_markdown(&self) -> String {
-        let content = fs::read_to_string(&self.path);
-        content.unwrap()
+    pub fn save_files(&mut self) {
+        match &self.extension {
+            FileExtension::Markdown { .. } => self.save_markdown(),
+            _ => panic!("Que estas guardado boy"),
+        }
+    }
+
+    fn save_markdown(&mut self) {
+        if let FileExtension::Markdown { title, content } = &self.extension {
+            match fs::write(&self.path, content) {
+                Ok(()) => return,
+                Err(e) => panic!(
+                    "Crazy things my blud! There is an error in writing files: {}",
+                    e
+                ),
+            }
+        }
+    }
+
+    /*    change to result to err when unsoported filetypes */
+    fn read_markdown(&mut self) {
+        if let FileExtension::Markdown { title, content } = &self.extension {
+            if !title.is_empty() || !content.is_empty() {
+                return;
+            }
+            let content = fs::read_to_string(&self.path).expect("Failed to read file");
+
+            self.extension = FileExtension::Markdown {
+                title: self.relative_path.clone(),
+                content,
+            }
+        } else {
+            panic!("Invalid extension for read_markdown");
+        }
     }
 }

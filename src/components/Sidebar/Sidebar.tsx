@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { FileItem } from "./FileItem";
+import Actions from "./Actions";
+import FileSystem from "./Filesystem";
 
 interface File {
   type: "File" | "Directory";
@@ -12,16 +12,8 @@ interface File {
 const Sidebar = ({ files }: { files?: File[] | null }) => {
   return (
     <div className="h-screen no-scrollbar w-full overflow-hidden p-[40px]">
-      <div
-        style={{ msScrollbarBaseColor: "black" }}
-        className="overflow-y-scroll mt-20 no-scrollbar h-full w-full gap-y-4"
-      >
-        {files &&
-          Array.isArray(files) &&
-          files.map((item, indx) => {
-            return <FileItem key={indx} file={item} />;
-          })}
-      </div>
+      <Actions />
+      <FileSystem files={files} />
     </div>
   );
 };

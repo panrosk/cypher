@@ -25,4 +25,5 @@ tauri-plugin-store = "2.0.0-beta.10"
 anyhow = "1.0"
 pathdiff = "0.2.1"
 tempfile = "3.10.1"
+markdown-parser = "0.1.2"
 

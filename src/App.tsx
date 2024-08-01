@@ -16,7 +16,7 @@ function App() {
   }, []);
 
   return (
-    <div className="text-white text-platform w-screen h-screen bg-[#1e1e1e]">
+    <div className="text-white text-platform w-screen h-screen">
       {screen.screen === "init" ? <InitScreen /> : <MainView />}
     </div>
   );

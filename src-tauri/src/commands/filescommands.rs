@@ -12,8 +12,14 @@ pub fn get_dir_files(dir: &str) -> Result<Vec<Option<File>>, InvokeError> {
 }
 
 #[tauri::command]
-pub fn read_file(file: Value) -> Result<Value, InvokeError> {
-    let file_to_read: File = serde_json::from_value(file).unwrap();
-    let markdown = file_to_read.read_files();
-    Ok(markdown)
+pub fn read_file(file: Value) -> Result<File, InvokeError> {
+    let mut file_to_read: File = serde_json::from_value(file).unwrap();
+    file_to_read.read_files();
+    Ok(file_to_read)
+}
+
+#[tauri::command]
+pub fn save_files(file: Value) {
+    let mut file_to_save: File = serde_json::from_value(file).unwrap();
+    file_to_save.save_files();
 }

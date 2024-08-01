@@ -1,6 +1,10 @@
 use crate::files::file_types::File;
 use anyhow::Result;
-use std::{fs, path::PathBuf, str::FromStr};
+use std::{
+    fs,
+    path::{Path, PathBuf},
+    str::FromStr,
+};
 
 use super::file_utils::list_files_on_directory;
 
@@ -11,7 +15,7 @@ pub fn get_files_list(dir_to_open: &str) -> Result<Vec<Option<File>>> {
     Ok(files_paths)
 }
 
-fn config_init_folder(cryp_dir: &str) -> Result<()> {
+pub fn config_init_folder(cryp_dir: &str) -> Result<()> {
     let init_folder = PathBuf::from(".cypher");
     let mut base_path = PathBuf::from(cryp_dir);
     base_path.push(init_folder);
@@ -19,6 +23,13 @@ fn config_init_folder(cryp_dir: &str) -> Result<()> {
     if !base_path.exists() {
         fs::create_dir_all(&base_path)?;
     };
+
+    Ok(())
+}
+
+pub fn create_dir(dir_location: &str) -> Result<()> {
+    let path = PathBuf::from_str(dir_location).unwrap();
+    let _ = fs::DirBuilder::new().create(path).unwrap();
 
     Ok(())
 }

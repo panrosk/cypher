@@ -4,7 +4,7 @@ mod files;
 mod setup;
 mod store;
 mod window;
-use commands::filescommands::{get_dir_files, read_file};
+use commands::filescommands::{get_dir_files, read_file, save_files};
 use commands::storecommands::set_dir;
 
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
@@ -15,7 +15,12 @@ pub fn run() {
         .plugin(tauri_plugin_dialog::init())
         .plugin(tauri_plugin_shell::init())
         .setup(|app| setup::setup::setup(app))
-        .invoke_handler(tauri::generate_handler![set_dir, get_dir_files, read_file])
+        .invoke_handler(tauri::generate_handler![
+            set_dir,
+            get_dir_files,
+            read_file,
+            save_files
+        ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }

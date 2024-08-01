@@ -1,0 +1,5 @@
+- [ ] Init create config.json
+- [x] Crear eventos de guardad archivos.
+- [x] Mardown viewer
+- [ ] Crear evento de creacion de archivos
+- [ ] Crear eventos de creacion de carpetas

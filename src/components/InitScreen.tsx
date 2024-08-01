@@ -19,7 +19,7 @@ const InitScreen = () => {
     },
   ];
   return (
-    <div className="w-full p-bigscreen  flex h-full">
+    <div className="w-full p-bigscreen bg-[#1e1e1e]  flex h-full">
       <div className="w-1/3 flex flex-col h-full border-white border-r-4">
         <div>
           <img src={logo} className="h-20 w-20" alt="" />
@@ -40,6 +40,7 @@ const InitScreen = () => {
           {exampleOptions.map((item, _key) => {
             return (
               <InitScreenItemList
+                key={_key}
                 header={item.header}
                 subheader={item.subheader}
               >
