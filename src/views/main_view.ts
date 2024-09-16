@@ -1,11 +1,12 @@
+import { Store } from '@tauri-apps/plugin-store';
 import { LitElement, html, css } from 'lit';
 import { customElement, property } from 'lit/decorators.js'
-import { Store } from '@tauri-apps/plugin-store';
-
-
+import { CFile } from '../types/files';
+import { listen } from '@tauri-apps/api/event';
 @customElement('main-view')
 export class main_view extends LitElement {
-
+  @property({ type: Object }) file: CFile | null = null;
+  @property({ type: String }) markdown: string = "pepitc";
 
   static styles = [
     css`
@@ -37,57 +38,35 @@ export class main_view extends LitElement {
     `
   ];
 
-  async connectedCallback() {
-    super.connectedCallback()
-    // const store = new Store('store.bin');
-    //
-    // const val = await store.get('app_store');
-    // console.log(val);
+  connectedCallback() {
+    super.connectedCallback();
+
+    const initializeStoreAndEvents = async () => {
+      const store = new Store('store.bin');
+
+      const val = await store.get('app_store');
+      console.log(val);
+
+      const currentFileListener = await listen('set_current_file', (event) => {
+        const file: CFile = event.payload?.file;
+        if (file) {
+          this.file = file;
+
+          if (this.file.extension.Markdown.content) {
+            this.markdown = this.file.extension.Markdown.content
+
+          }
+        }
+      });
+
+    };
+
+    initializeStoreAndEvents();
 
 
   }
 
   render() {
-    const file = {
-      "file_type": "Directory",
-      "relative_path": "root",
-      "sub": [
-        {
-          "file_type": "Directory",
-          "relative_path": "folder1",
-          "sub": [
-            {
-              "file_type": "File",
-              "relative_path": "file1.txt",
-              "extension": "txt"
-            },
-            {
-              "file_type": "File",
-              "relative_path": "file2.js",
-              "extension": "js"
-            }
-          ]
-        },
-        {
-          "file_type": "Directory",
-          "relative_path": "folder2",
-          "sub": [
-            {
-              "file_type": "File",
-              "relative_path": "file3.html",
-              "extension": "html"
-            }
-          ]
-        },
-        {
-          "file_type": "File",
-          "relative_path": "readme.md",
-          "extension": "Markdown"
-        }
-      ]
-    };
-
-
 
     return html`
   
@@ -96,7 +75,7 @@ export class main_view extends LitElement {
       <file-system></file-system>
     </div>
     <div class="main-content">
-      <markdown-editor></markdown-editor>
+      <markdown-editor .markdown=${this.markdown}></markdown-editor>
     </div>
     <div class="sidebar right">right</div>
   </div>

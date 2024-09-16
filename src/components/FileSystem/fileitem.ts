@@ -2,6 +2,7 @@
 import { LitElement, html, css } from 'lit';
 import { customElement, property, state } from 'lit/decorators.js';
 import { CFile } from '../../types/files.js';
+import { emit } from '@tauri-apps/api/event';
 
 
 @customElement('file-item')
@@ -30,11 +31,15 @@ export class FileItem extends LitElement {
   }
 
   async onFileClick(file: CFile | null) {
-    console.log(file)
+    if (file) {
+      this.setCurrentFile(file)
+    }
   }
 
-  async setCurrentFile(file: CFile | null) {
-    console.log('Current file set to:', file);
+  async setCurrentFile(file: CFile) {
+    emit("set_current_file", {
+      file: file
+    });
   }
 
   render() {

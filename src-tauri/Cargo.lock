@@ -680,7 +680,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "cypher_v2"
+name = "cypher"
 version = "0.1.0"
 dependencies = [
  "anyhow",

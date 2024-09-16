@@ -15,7 +15,7 @@ export class MarkdownEditor extends LitElement {
   @property({ type: String }) markdown = '';
 
   @state() private edit = true;
-  @state() private renderedHTML = '';
+  private renderedHTML = '';
 
   // Component styles
   static styles = css`
