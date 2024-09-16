@@ -3,6 +3,7 @@ import { LitElement, html, css } from 'lit';
 import { customElement, property } from 'lit/decorators.js'
 import { CFile } from '../types/files';
 import { listen } from '@tauri-apps/api/event';
+import { invoke } from '@tauri-apps/api/core';
 @customElement('main-view')
 export class main_view extends LitElement {
   @property({ type: Object }) file: CFile | null = null;
@@ -38,6 +39,29 @@ export class main_view extends LitElement {
     `
   ];
 
+
+  handleMarkdownChange(event: CustomEvent) {
+
+    if (this.file && this.file.extension && this.file.extension.Markdown) {
+      const updatedFile = {
+        ...this.file,
+        extension: {
+          ...this.file.extension,
+          Markdown: {
+            ...this.file.extension.Markdown,
+            content: event.detail
+
+          }
+        }
+      };
+
+      this.file = updatedFile;
+      invoke("save_files", { file: this.file })
+
+    }
+  }
+
+
   connectedCallback() {
     super.connectedCallback();
 
@@ -48,18 +72,14 @@ export class main_view extends LitElement {
       console.log(val);
 
       const currentFileListener = await listen('set_current_file', (event) => {
-        const file: CFile = event.payload?.file;
+        let file: CFile = event.payload?.file;
         if (file) {
           this.file = file;
-
-          if (this.file.extension.Markdown.content) {
-            this.markdown = this.file.extension.Markdown.content
-
-          }
         }
       });
 
     };
+
 
     initializeStoreAndEvents();
 
@@ -75,7 +95,10 @@ export class main_view extends LitElement {
       <file-system></file-system>
     </div>
     <div class="main-content">
-      <markdown-editor .markdown=${this.markdown}></markdown-editor>
+      <markdown-editor
+      @markdown-changed=${this.handleMarkdownChange}
+          .markdown=${this.file?.extension.Markdown.content}>
+      </markdown-editor>
     </div>
     <div class="sidebar right">right</div>
   </div>

@@ -9,6 +9,7 @@ import { markedHighlight } from "marked-highlight";
 import hljs from 'highlight.js';
 import codetheme from "highlight.js/styles/github-dark.css?raw"
 import markedFootnote from 'marked-footnote';
+import { invoke } from '@tauri-apps/api/core';
 
 @customElement('markdown-editor')
 export class MarkdownEditor extends LitElement {
@@ -157,6 +158,12 @@ export class MarkdownEditor extends LitElement {
     const value = event.target.value as string;
     const text = this.parseOnInput(value as string)
     this.markdown = text;
+    this.dispatchEvent(new CustomEvent('markdown-changed', {
+      detail: this.markdown,
+      bubbles: true,
+      composed: true
+    }));
+
   }
 
 
