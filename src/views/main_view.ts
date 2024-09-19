@@ -20,8 +20,9 @@ export class main_view extends LitElement {
     .container {
       background-color: var(--theme-bg-color);
       display: flex;
-      height: 100vh;
-      width: 100vw;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
       color: var(--theme-text-color);
     }
 
@@ -40,7 +41,7 @@ export class main_view extends LitElement {
       background-color: var(--theme-bg-color);
       padding: 20px !important;
       border: 20px;
-      overflow: hidden;
+      overflow: scroll;
     }
 
     .sidebar.right {

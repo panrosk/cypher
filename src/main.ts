@@ -1,15 +1,16 @@
-import { LitElement, html, css } from 'lit';
+import { LitElement, html, css } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
-type Route = '/' | '/main';
+type Route = "/" | "/main";
 
-@customElement('my-app')
+@customElement("my-app")
 export class MyApp extends LitElement {
-
   static styles = css`
-  main {
-      overflow:hidden
-  }
+    main {
+      overflow: hidden;
+      height:100vh;
+      width: 100vw;
+    }
   `;
 
   @property({ type: String })
@@ -27,19 +28,16 @@ export class MyApp extends LitElement {
 
   public navigate(e: MouseEvent, path: Route) {
     e.preventDefault();
-    window.history.pushState({}, '', path);
+    window.history.pushState({}, "", path);
     this.route = path;
   }
 
   render() {
     return html`
-      
       <main>
-        ${this.route === '/' ? html`<init-view></init-view>` : ''}
-        ${this.route === '/main' ? html`<main-view></main-view>` : ''}
+        ${this.route === "/main" ? html`<init-view></init-view>` : ""}
+        ${this.route === "/" ? html`<main-view></main-view>` : ""}
       </main>
     `;
   }
 }
-
-
