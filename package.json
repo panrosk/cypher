@@ -16,6 +16,7 @@
     "@tauri-apps/plugin-store": "^2.0.0-rc",
     "bootstrap-icons": "^1.11.3",
     "dompurify": "^3.1.6",
+    "gsap": "^3.12.5",
     "highlight.js": "^11.10.0",
     "jsdom": "^25.0.0",
     "lenis": "^1.1.13",

@@ -8,7 +8,7 @@
 --header-size:60px;
 --theme-el-bg-color:white;
 --theme-el-text-color:#1C1C1C;
---theme-secondary-bg-bolor:#262626
+--theme-secondary-bg-color:#262626
 }
 
 
@@ -27,7 +27,8 @@ body {
 
 
 [data-theme='dark'] {
---theme-bg-color: #262626;
+--theme-bg-color: #1C1C1C;
+--theme-secondary-bg-bolor:#262626;
 --theme-text-color: white;
 }
 

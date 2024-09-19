@@ -9,6 +9,7 @@ export class init_view extends LitElement {
       .container {
           width: inherit;
           height: 100vh;
+          
       }
 
       .logo {

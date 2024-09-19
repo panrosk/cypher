@@ -5,10 +5,9 @@ type Route = '/' | '/main';
 
 @customElement('my-app')
 export class MyApp extends LitElement {
+
   static styles = css`
   main {
-      background-color:var(--theme-bg-color);
-      color:var(--theme-text-color);
       overflow:hidden
   }
   `;

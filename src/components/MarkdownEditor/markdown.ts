@@ -26,8 +26,6 @@ export class MarkdownEditor extends LitElement {
           height: 100%;
           position: relative;
           overflow: hidden; 
-          background-color: var(--theme-bg-color);
-          color: var(--theme-text-color);
         }
 
         textarea {
@@ -53,7 +51,7 @@ export class MarkdownEditor extends LitElement {
           box-sizing: border-box;
           background-color: inherit;
           color: inherit;
-          word-wrap: break-word; /* Permite que las palabras largas se rompan */
+          word-wrap: break-word; 
           white-space: normal;
         }
 

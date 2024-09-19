@@ -15,12 +15,12 @@ export class file_system extends LitElement {
       overflow-y: scroll;
       height: 100vh;
       margin-top:40px;
-      margin-bottom:40px;
+      margin-bottom:100px;
     }
     .container2 {
       
       margin-top:20px;
-      margin-bottom:40px;
+      margin-bottom:100px;
     }
 
     `

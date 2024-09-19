@@ -15,7 +15,7 @@ export class FileItem extends LitElement {
       display: flex;
       flex-direction: column;
       padding-left: 10px;
-      font-size: 16px;
+      font-size: 14px;
        
     }
     .file-line {
@@ -48,13 +48,13 @@ export class FileItem extends LitElement {
         ${this.file?.file_type === 'File'
         ? html`
               <div class="file-line" @click=${() => this.onFileClick(this.file)}>
-                <file-icon .icon=${this.file?.extension}></file-icon>
+                <cy-icon .icon=${this.file?.extension}></cy-icon>
                 <span>${this.file?.relative_path}</span>
               </div>
             `
         : html`
               <div class="file-line" @click=${this.handleToggle}>
-                <file-icon .icon="Directory" .open=${this.isExpanded}></file-icon>
+                <cy-icon .icon="Directory" .open=${this.isExpanded}></cy-icon>
                 <span>${this.file?.relative_path}</span>
               </div>
               ${this.isExpanded && this.file?.sub && this.file?.sub.length > 0
