@@ -9,6 +9,8 @@
     "core:default",
     "shell:allow-open",
     "dialog:default",
-    "store:default"
+    "store:default",
+    "fs:default",
+    "fs:default"
   ]
 }

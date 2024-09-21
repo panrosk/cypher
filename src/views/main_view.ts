@@ -8,7 +8,7 @@ import { invoke } from "@tauri-apps/api/core";
 @customElement("main-view")
 export class main_view extends LitElement {
   @property({ type: Object }) file: CFile | null = null;
-  @property({ type: String }) markdown: string = "pepitc";
+  @property({ type: String }) viewer: "Markdown" | "Pdf" | "" = "";
 
   static styles = css`
     * {
@@ -36,6 +36,10 @@ export class main_view extends LitElement {
       border-right: 0.5px solid var(--theme-text-color);
     }
 
+    pdf-viewer {
+      width: 100%;
+      height: 100%;
+    }
     .main-content {
       flex: 1;
       background-color: var(--theme-bg-color);
@@ -67,6 +71,28 @@ export class main_view extends LitElement {
     }
   }
 
+  renderView() {
+    switch (this.viewer) {
+      case "":
+        return html` <div>hola</div> `;
+
+      case "Markdown":
+        return html`
+          <markdown-editor
+            @markdown-changed=${this.handleMarkdownChange}
+            .markdown=${this.file?.extension.Markdown.content}
+          >
+          </markdown-editor>
+        `;
+
+      case "Pdf":
+        return html` <pdf-viewer .file=${this.file}></pdf-viewer> `;
+
+      default:
+        return html` <div>Viewer type not recognized.</div> `;
+    }
+  }
+
   connectedCallback() {
     super.connectedCallback();
 
@@ -80,6 +106,14 @@ export class main_view extends LitElement {
         let file: CFile = event.payload?.file;
         if (file) {
           this.file = file;
+
+          if (typeof this.file.extension == "object") {
+            const type = Object.keys(this.file.extension)[0];
+            console.log(type);
+            this.viewer = type;
+          } else {
+            this.viewer = file.extension;
+          }
         }
       });
     };
@@ -94,13 +128,7 @@ export class main_view extends LitElement {
         <div class="sidebar left">
           <file-system></file-system>
         </div>
-        <div class="main-content">
-          <markdown-editor
-            @markdown-changed=${this.handleMarkdownChange}
-            .markdown=${this.file?.extension.Markdown.content}
-          >
-          </markdown-editor>
-        </div>
+        <div class="main-content">${this.renderView()}</div>
         <div class="sidebar right">right</div>
       </div>
     `;

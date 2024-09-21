@@ -40,7 +40,9 @@ pub fn set_values_config_store(app: tauri::AppHandle, key: &str, value: Value) {
     let stores = app.state::<StoreCollection<Wry>>();
     let path = PathBuf::from("store.bin");
     let _ = with_store(app.clone(), stores, path, |store| {
-        let current_store: &Value = store.get(StoreType::AppState.to_string()).unwrap();
+        let current_store: &Value = store
+            .get(StoreType::AppState.to_string())
+            .expect("current store not found");
         let mut config_store: AppState = serde_json::from_value(current_store.clone()).unwrap();
 
         match key {

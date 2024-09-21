@@ -1,5 +1,5 @@
-use tauri::{App, Listener, Manager};
 use crate::events::files::set_current_file;
+use tauri::{App, Listener, Manager};
 macro_rules! setup_event_listeners {
     ($app:expr, $app_handle:expr, $(($event_name:expr, $handler:expr)),* $(,)?) => {
         {

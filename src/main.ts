@@ -8,7 +8,7 @@ export class MyApp extends LitElement {
   static styles = css`
     main {
       overflow: hidden;
-      height:100vh;
+      height: 100vh;
       width: 100vw;
     }
   `;
@@ -35,8 +35,8 @@ export class MyApp extends LitElement {
   render() {
     return html`
       <main>
-        ${this.route === "/main" ? html`<init-view></init-view>` : ""}
-        ${this.route === "/" ? html`<main-view></main-view>` : ""}
+        ${this.route === "/" ? html`<init-view></init-view>` : ""}
+        ${this.route === "/main" ? html`<main-view></main-view>` : ""}
       </main>
     `;
   }
